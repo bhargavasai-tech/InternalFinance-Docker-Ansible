@@ -49,7 +49,7 @@ resource "aws_instance" "finance_server" {
               #!/bin/bash
               dnf update -y
               dnf remove -y podman podman-docker
-              dnf install -y docker git
+              dnf install -y docker git ansible-core
               service docker start
               systemctl enable docker
               usermod -a -G docker ec2-user
